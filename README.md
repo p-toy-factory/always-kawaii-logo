@@ -1,8 +1,10 @@
 # Always kawaii logo
 
-A userscript to make logo of the websites kawaii if available
+A userscript to make logo of the websites kawaii if available.
 
-![Screenshot_6-5-2024_233453_react dev](https://github.com/p-toy-factory/always-kawaii-logo/assets/45930107/34ca2898-201a-4682-a6cd-e13b48db3fc1)
+| Before | After |
+| - | - |
+| <img alt="screenshot - after" src="https://github.com/p-toy-factory/always-kawaii-logo/assets/45930107/6d120054-34b9-4804-ad6b-913621290b86"> | <img alt="screenshot - after" src="https://github.com/p-toy-factory/always-kawaii-logo/assets/45930107/34ca2898-201a-4682-a6cd-e13b48db3fc1"> |
 
 ## Install
 
