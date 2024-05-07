@@ -6,7 +6,7 @@ A userscript to make logo of the websites kawaii if available
 ## Install
 
 1. Install [Tampermonkey](https://www.tampermonkey.net)
-2. [Install this userscript](https://raw.githubusercontent.com/p-toy-factory/always-kawaii-logo/main/script.user.js)
+2. Install this userscript from [Greasy Fork](https://greasyfork.org/zh-CN/scripts/494273-always-kawaii-logo) or [GitHub](https://raw.githubusercontent.com/p-toy-factory/always-kawaii-logo/main/script.user.js)
 
 ## Supported websites
 - https://asahilinux.org/
