@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Always kawaii logo
 // @namespace    http://github.com/p-toy-factory/always-kawaii-logo
-// @version      1.1.0
+// @version      1.2.0
 // @description  Make logo of the websites kawaii if available
 // @author       Pink Champagne
 // @supportURL   https://github.com/p-toy-factory/always-kawaii-logo/issues
+// @match        https://angular.dev/*
 // @match        https://asahilinux.org/*
 // @match        https://bsky.app/*
 // @match        https://www.haskell.org/
@@ -40,6 +41,15 @@
   }
 
   switch (location.hostname) {
+    case "angular.dev":
+      if (
+        location.search.includes(uwuSearch) ||
+        document.querySelector(".uwu-logo")
+      ) {
+        return;
+      }
+      location.search = uwuSearch;
+
     case "asahilinux.org": {
       if (
         location.search.includes(kawaiiSearch) ||
@@ -51,7 +61,7 @@
       break;
     }
 
-    case "bsky.app": {
+    case "bsky.app":
       if (
         location.search.includes(kawaiiSearch) ||
         JSON.parse(localStorage.getItem("BSKY_STORAGE") ?? "null")?.kawaii ===
@@ -61,7 +71,6 @@
       }
       location.search = kawaiiSearch;
       break;
-    }
 
     case "www.haskell.org":
     case "vuejs.org":
@@ -97,27 +106,23 @@
       break;
 
     case "qwik.dev":
-      {
-        if (
-          location.search.includes(uwuSearch) ||
-          localStorage.getItem("uwu") === String(true)
-        ) {
-          return;
-        }
-        location.search = uwuSearch;
+      if (
+        location.search.includes(uwuSearch) ||
+        localStorage.getItem("uwu") === String(true)
+      ) {
+        return;
       }
+      location.search = uwuSearch;
       break;
 
     case "react.dev":
-      {
-        if (
-          location.search.includes(uwuSearch) ||
-          localStorage.getItem("uwu") === String(true)
-        ) {
-          return;
-        }
-        location.search = uwuSearch;
+      if (
+        location.search.includes(uwuSearch) ||
+        localStorage.getItem("uwu") === String(true)
+      ) {
+        return;
       }
+      location.search = uwuSearch;
       break;
   }
 })();
