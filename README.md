@@ -2,8 +2,8 @@
 
 A userscript to make logo of the websites kawaii if available.
 
-| Before | After |
-| - | - |
+| Before                                                                                                                                        | After                                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | <img alt="screenshot - after" src="https://github.com/p-toy-factory/always-kawaii-logo/assets/45930107/6d120054-34b9-4804-ad6b-913621290b86"> | <img alt="screenshot - after" src="https://github.com/p-toy-factory/always-kawaii-logo/assets/45930107/34ca2898-201a-4682-a6cd-e13b48db3fc1"> |
 
 ## Install
@@ -14,6 +14,7 @@ A userscript to make logo of the websites kawaii if available.
 ## Supported websites
 
 - https://asahilinux.org/
+- https://angular.dev/
 - https://bsky.app/
 - https://www.haskell.org/
 - https://hono.dev/
@@ -21,4 +22,6 @@ A userscript to make logo of the websites kawaii if available.
 - https://nextjs.org/
 - https://qwik.dev/
 - https://react.dev/
+- https://rolldown.rs/
 - https://vuejs.org/
+- https://tuna.voicemod.net/

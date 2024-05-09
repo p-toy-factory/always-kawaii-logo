@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Always kawaii logo
 // @namespace    http://github.com/p-toy-factory/always-kawaii-logo
-// @version      1.2.0
+// @version      1.3.0
 // @description  Make logo of the websites kawaii if available
 // @author       Pink Champagne
 // @supportURL   https://github.com/p-toy-factory/always-kawaii-logo/issues
@@ -14,6 +14,8 @@
 // @match        https://nextjs.org/*
 // @match        https://qwik.dev/*
 // @match        https://react.dev/*
+// @match        https://rolldown.rs/
+// @match        https://tuna.voicemod.net/*
 // @match        https://vuejs.org/
 // @grant        none
 // @run-at       document-start
@@ -24,10 +26,14 @@
 (function () {
   "use strict";
 
+  function includesUwuSearch() {
+    return location.search.includes(uwuSearch);
+  }
+
   const uwuSearch = "uwu=true";
 
   function enableUwUOnlyHomepage() {
-    if (location.pathname === "/" && !location.search.includes(uwuSearch)) {
+    if (location.pathname === "/" && !includesUwuSearch()) {
       location.search = uwuSearch;
     }
   }
@@ -42,10 +48,7 @@
 
   switch (location.hostname) {
     case "angular.dev":
-      if (
-        location.search.includes(uwuSearch) ||
-        document.querySelector(".uwu-logo")
-      ) {
+      if (includesUwuSearch() || document.querySelector(".uwu-logo")) {
         return;
       }
       location.search = uwuSearch;
@@ -80,7 +83,7 @@
     case "misskey-hub.net":
       if (/^\/[\w-]+\/$/.test(location.pathname)) {
         if (
-          location.search.includes(uwuSearch) ||
+          includesUwuSearch() ||
           localStorage.getItem("miHub_uwu") === String(true)
         ) {
           return;
@@ -92,7 +95,7 @@
     case "nextjs.org":
       requestIdleCallback(() => {
         if (
-          location.search.includes(uwuSearch) ||
+          includesUwuSearch() ||
           document.documentElement.classList.contains("uwu")
         ) {
           return;
@@ -106,20 +109,25 @@
       break;
 
     case "qwik.dev":
-      if (
-        location.search.includes(uwuSearch) ||
-        localStorage.getItem("uwu") === String(true)
-      ) {
+      if (includesUwuSearch() || localStorage.getItem("uwu") === String(true)) {
         return;
       }
       location.search = uwuSearch;
       break;
 
     case "react.dev":
-      if (
-        location.search.includes(uwuSearch) ||
-        localStorage.getItem("uwu") === String(true)
-      ) {
+      if (includesUwuSearch() || localStorage.getItem("uwu") === String(true)) {
+        return;
+      }
+      location.search = uwuSearch;
+      break;
+
+    case "rolldown.rs":
+      enableUwUOnlyHomepage();
+      break;
+
+    case "tuna.voicemod.net":
+      if (includesUwuSearch() || document.cookie.includes("uwu=true")) {
         return;
       }
       location.search = uwuSearch;
